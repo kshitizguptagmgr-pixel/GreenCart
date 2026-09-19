@@ -19,7 +19,7 @@ await connectDB()
 await connectCloudinary()
 
 // Allow multiple origins
-const allowedOrigins = ['http://localhost:5173', 'https://greencart-backend-jwbh.onrender.com']
+const allowedOrigins = ['http://localhost:5173', 'https://greencart-client-b32qoxrov-kshitizguptagmgr-1745.vercel.app']
 
 app.post('/stripe', express.raw({type: 'application/json'}), stripeWebhooks)
 
@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(cors({origin: allowedOrigins, credentials: true}));
 
 
-app.get('/', (req, res) => res.send("API is Working v2"));
+app.get('/', (req, res) => res.send("API is Working"));
 app.use('/api/user', userRouter)
 app.use('/api/seller', sellerRouter)
 app.use('/api/product', productRouter)
